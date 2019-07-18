@@ -12,7 +12,7 @@
     policy: targeted
     state: enforcing
 
-- name: "[Cultivator - Pre-Reqs] Install Base Packages for Tower CLI"
+- name: "Install Base Packages for Openshift"
   yum:
     name: "{{ ocp311_base_packages }}"
     state: present
