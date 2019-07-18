@@ -12,22 +12,12 @@
     policy: targeted
     state: enforcing
 
-- name: Install packages
+- name: "[Cultivator - Pre-Reqs] Install Base Packages for Tower CLI"
   yum:
-    name: 
-      - wget
-      - git
-      - net-tools
-      - bind-utils
-      - yum-utils
-      - iptables-services
-      - bridge-utils
-      - bash-completion
-      - kexec-tools
-      - sos
-      - psacct
-      - docker-1.13.1
+    name: "{{ ocp311_base_packages }}"
     state: present
+  become: true
+  when: "ocp_ver != 3.11"
 
 - name: Install Ansible Openshift Packages for Openshift 3.11
   yum:
