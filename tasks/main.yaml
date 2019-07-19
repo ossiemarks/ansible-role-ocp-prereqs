@@ -17,21 +17,24 @@
     name: "{{ ocp311_base_packages }}"
     state: present
   become: true
-  when: "ocp_ver != 3.11"
+  when: 
+    - ocp_ver == 3.11
 
 - name: Install Ansible Openshift Packages for Openshift 3.11
   yum:
     name: 
       - atomic-openshift-utils
     state: present
-  when: "ocp_ver != 3.11"
+  when: 
+    - ocp_ver != 3.11
 
 - name: Install Ansible Openshift Packages for Openshift 3.11
   yum:
     name: 
       - openshift-ansible
     state: present
-  when: "ocp_ver == 3.11"
+  when: 
+    - ocp_ver == 3.11
 
 - name: upgrade all packages
   yum:
