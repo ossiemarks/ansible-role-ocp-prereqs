@@ -1,0 +1,10 @@
+---
+
+- name: Configure SELinux to targeted and enforcing
+  selinux: 
+    policy: targeted
+    state: enforcing
+
+
+
+

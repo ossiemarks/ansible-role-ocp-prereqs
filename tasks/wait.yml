@@ -1,0 +1,13 @@
+---
+
+- name: Wait at least 10 min for the vms to start before we can configre.
+  wait_for_connection:
+    connect_timeout: 20
+    sleep: 5
+    delay: 5
+    timeout: 600
+
+
+
+
+
